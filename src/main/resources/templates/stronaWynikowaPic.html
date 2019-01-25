@@ -13,14 +13,11 @@
 <table>
     <tr th:each="symbol: ${mapatlumaczen.entrySet()}">
         <td th:width="200" th:text="${symbol.getKey()}" />
-        <td th:width="500" th:text="${symbol.getValue()}" />
+        <td th:width="500"><img class="image-width" id="image"
+                                th:src="${'data:image/png;base64,'+symbol.getValue()}"
+                                alt=""></td>
 
     </tr>
 </table>
-
-
-
-
-
 </body>
 </html>

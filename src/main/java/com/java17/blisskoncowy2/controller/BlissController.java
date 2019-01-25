@@ -32,4 +32,19 @@ public class BlissController {
             return "stronaWynikowa";
     }
 
+    // todo: drugi mapping (identyzcny) który woła ten sam serwis, ale drugą metodę, a na koncu wywoluje drugi html (do stworzenia)
+
+    @GetMapping(path = "/tlumaczenieObrazek")
+    public String getSymbols2() {
+        return "symbolsObrazek";
+    }
+
+    @PostMapping("/tlumaczFormObrazek")//co tu ma byc?
+    public String znajdzSymbolWgOpisuZobrazek(String tekstDoTlumaczenia, Model model) {
+        Map<String, String> mapaTlumaczen = symbolService.szukajPoOpisieZObrazek(tekstDoTlumaczenia);
+
+        model.addAttribute("mapatlumaczen", mapaTlumaczen);
+
+        return "stronaWynikowaPic";
+    }
 }
