@@ -1,0 +1,25 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Bliss symbols - wynik wyszukiwania</title>
+</head>
+<body>
+<h2>Formularz szukania:</h2>
+<!--//todo: tabelka (table) z dwiema kolumnami. Tabela ma iterować w kazdym wierszu ma byc kolejny wpis. lewa = klucz (slowo) prawa wartosc = id symbolu-->
+<!-- for each-->
+
+<table>
+    <tr th:each="symbol: ${mapatlumaczen.entrySet()}">
+        <td th:width="200" th:text="${symbol.getKey()}" />
+        <td th:width="500" th:text="${symbol.getValue()}" />
+    </tr>
+</table>
+
+
+
+
+
+</body>
+</html>
